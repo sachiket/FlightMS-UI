@@ -38,7 +38,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="select-repo-selectized"> Flying from </label>
-                                            <select class="form-control">
+                                            <select class="form-control" [(ngModel)]="source" name="source">
 												<option>BLR</option>
 												<option>MUM</option>
 												<option>BBS</option>
@@ -51,7 +51,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="select-repo-selectized"> Flying to </label>
-                                            <select class="form-control">
+                                            <select class="form-control" [(ngModel)]="destination" name="description">
                                                 <option>MUM</option>
 												<option>BLR</option>
 												<option>BBS</option>
@@ -66,7 +66,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="pure-material-textfield-outlined">
-                                        <input placeholder=""  class="" type="date">
+                                        <input placeholder=""  class="" type="date" [(ngModel)] = "date" name="date"> 
                                         <span>Departing</span>
                                         </label>
                                         </div>
@@ -106,7 +106,7 @@
                                     </div>
                                 </div>
                                 <div class="form-btn">
-                                    <button class="pure-material-button-contained submit-btn">Search</button>
+                                    <button class="pure-material-button-contained submit-btn" (click)="redirectToFlightSearchResults()">Search</button>
                                 </div>
                             </form>
                         </div>

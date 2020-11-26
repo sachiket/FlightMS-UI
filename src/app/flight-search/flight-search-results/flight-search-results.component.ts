@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlightService } from 'src/app/_service/flight.service';
 
 @Component({
   selector: 'app-flight-search-results',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlightSearchResultsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private flightService:FlightService) { }
 
+  flights:any
   ngOnInit(): void {
+    let list = this.flightService.viewAllFlightWithSourceDestinationDate();
+    list.subscribe((data) => this.flights = data);
   }
 
 }
